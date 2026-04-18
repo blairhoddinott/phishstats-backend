@@ -16,10 +16,12 @@ This backend uses PostgreSQL with the PostGIS extension enabled.
 - `first_played` nullable date
 - `last_played` nullable date
 - `times_played` nullable integer
+- seeded from `scripts/songs_seed.py` with the canonical studio album song catalogue
 
 ### album_songs
 Join table between albums and songs.
 - preserves track ordering via `track_number`
+- seeded from `scripts/songs_seed.py` ordered per-album track mappings
 
 ### concerts
 - `id` UUID primary key
@@ -56,4 +58,5 @@ Join table between chasing lists and songs.
 - The requested list relationships are implemented as association tables for ordering and referential integrity.
 - The “max 5 songs” chasing list rule is enforced by the allowed positions `1..5` and should also be checked in application logic.
 - `location_geopoint` uses PostGIS geography `POINT` with SRID 4326.
-- The first concrete seed path populates only the `albums` table, which gives the project a canonical Phish studio album list to build on.
+- The current seed path populates `albums`, `songs`, and `album_songs` from the studio discography data.
+- `Get More Down` remains in the album seed list but currently has no canonical track mapping in `scripts/songs_seed.py` because no trustworthy tracklist was available from phish.net at compile time.

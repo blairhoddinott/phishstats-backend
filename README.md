@@ -34,7 +34,7 @@ Run tests locally:
 pytest
 ```
 
-Seed studio albums:
+Seed studio albums, songs, and album track links:
 ```bash
 .venv/bin/python scripts/seed_db.py
 ```
@@ -61,7 +61,9 @@ Restore database:
 
 ## Seed data
 - `scripts/albums_seed.py` contains the current Phish studio album list and release years.
-- `scripts/seed_db.py` inserts missing album rows into the `albums` table.
+- `scripts/songs_seed.py` contains canonical studio album songs plus per-album ordered track mappings.
+- `scripts/seed_db.py` inserts missing album rows, song rows, and ordered `album_songs` join rows.
+- Current caveat: `Get More Down` remains in the album seed list, but no canonical tracklist was available from phish.net during compilation, so it is not mapped into `ALBUM_SONGS` yet.
 
 ## Documentation
 - `docs/DATABASE.md`
