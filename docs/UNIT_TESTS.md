@@ -14,5 +14,9 @@ pytest
 ```
 
 ## Current coverage
-The initial scaffold includes a smoke test for the API root and health endpoint.
-Expand coverage as real business routes are added.
+The scaffold currently covers:
+- API root smoke test
+- health endpoint smoke test
+- static album seed data shape and completeness checks
+
+Expand coverage as real business routes and database-backed seed tests are added.

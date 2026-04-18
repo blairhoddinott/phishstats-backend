@@ -8,6 +8,7 @@ This backend uses PostgreSQL with the PostGIS extension enabled.
 - `id` UUID primary key
 - `name` album name
 - `year` release year
+- seeded from `scripts/albums_seed.py` with the current Phish studio album catalogue
 
 ### songs
 - `id` UUID primary key
@@ -55,3 +56,4 @@ Join table between chasing lists and songs.
 - The requested list relationships are implemented as association tables for ordering and referential integrity.
 - The “max 5 songs” chasing list rule is enforced by the allowed positions `1..5` and should also be checked in application logic.
 - `location_geopoint` uses PostGIS geography `POINT` with SRID 4326.
+- The first concrete seed path populates only the `albums` table, which gives the project a canonical Phish studio album list to build on.

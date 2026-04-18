@@ -34,9 +34,19 @@ Run tests locally:
 pytest
 ```
 
-Seed placeholder:
+Seed studio albums:
 ```bash
-python scripts/seed_db.py
+.venv/bin/python scripts/seed_db.py
+```
+
+Verify seeded albums:
+```bash
+.venv/bin/python scripts/verify_seed.py
+```
+
+Reset albums and reseed:
+```bash
+.venv/bin/python scripts/reset_db.py
 ```
 
 Backup database:
@@ -48,6 +58,10 @@ Restore database:
 ```bash
 ./scripts/restore_db.sh backup.sql
 ```
+
+## Seed data
+- `scripts/albums_seed.py` contains the current Phish studio album list and release years.
+- `scripts/seed_db.py` inserts missing album rows into the `albums` table.
 
 ## Documentation
 - `docs/DATABASE.md`
