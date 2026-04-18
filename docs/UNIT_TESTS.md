@@ -19,6 +19,7 @@ The scaffold currently covers:
 - health endpoint smoke test
 - static album seed data shape and completeness checks
 - static song seed uniqueness and album track mapping checks
+- direct song-to-album seed coverage via per-album ordered track mappings
 - repeated-track edge case coverage (`Rift` includes `Lengthwise` twice)
 
 Expand coverage as real business routes and database-backed seed tests are added.

@@ -12,16 +12,13 @@ This backend uses PostgreSQL with the PostGIS extension enabled.
 
 ### songs
 - `id` UUID primary key
+- `album_id` nullable FK to `albums.id`
+- `track_number` nullable integer for album ordering
 - `name` song name
 - `first_played` nullable date
 - `last_played` nullable date
 - `times_played` nullable integer
 - seeded from `scripts/songs_seed.py` with the canonical studio album song catalogue
-
-### album_songs
-Join table between albums and songs.
-- preserves track ordering via `track_number`
-- seeded from `scripts/songs_seed.py` ordered per-album track mappings
 
 ### concerts
 - `id` UUID primary key
@@ -58,4 +55,4 @@ Join table between chasing lists and songs.
 - The requested list relationships are implemented as association tables for ordering and referential integrity.
 - The “max 5 songs” chasing list rule is enforced by the allowed positions `1..5` and should also be checked in application logic.
 - `location_geopoint` uses PostGIS geography `POINT` with SRID 4326.
-- The current seed path populates `albums`, `songs`, and `album_songs` from the studio discography data.
+- The current seed path populates `albums` and `songs` from the studio discography data, with direct song-to-album linkage on the `songs` table.

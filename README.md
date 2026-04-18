@@ -34,7 +34,7 @@ Run tests locally:
 pytest
 ```
 
-Seed studio albums, songs, and album track links:
+Seed studio albums and songs:
 ```bash
 .venv/bin/python scripts/seed_db.py
 ```
@@ -62,7 +62,7 @@ Restore database:
 ## Seed data
 - `scripts/albums_seed.py` contains the current Phish studio album list and release years.
 - `scripts/songs_seed.py` contains canonical studio album songs plus per-album ordered track mappings.
-- `scripts/seed_db.py` inserts missing album rows, song rows, and ordered `album_songs` join rows.
+- `scripts/seed_db.py` inserts missing album rows and song rows, attaching songs directly to albums with `album_id` and `track_number`.
 
 ## Documentation
 - `docs/DATABASE.md`
