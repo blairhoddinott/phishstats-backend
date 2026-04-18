@@ -52,7 +52,9 @@ Join table between chasing lists and songs.
 - unique song and position per chasing list
 
 ## Modeling notes
-- The requested list relationships are implemented as association tables for ordering and referential integrity.
+- Songs now link directly to albums through `songs.album_id` instead of a separate `album_songs` join table.
+- `songs.track_number` preserves album ordering for seeded studio tracks.
+- The current schema assumes a song belongs to at most one album record.
 - The “max 5 songs” chasing list rule is enforced by the allowed positions `1..5` and should also be checked in application logic.
 - `location_geopoint` uses PostGIS geography `POINT` with SRID 4326.
 - The current seed path populates `albums` and `songs` from the studio discography data, with direct song-to-album linkage on the `songs` table.

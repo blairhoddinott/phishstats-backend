@@ -61,8 +61,14 @@ Restore database:
 
 ## Seed data
 - `scripts/albums_seed.py` contains the current Phish studio album list and release years.
-- `scripts/songs_seed.py` contains canonical studio album songs plus per-album ordered track mappings.
-- `scripts/seed_db.py` inserts missing album rows and song rows, attaching songs directly to albums with `album_id` and `track_number`.
+- `scripts/songs_seed.py` contains the canonical studio album song catalogue plus ordered per-album track mappings used to assign `album_id` and `track_number`.
+- `scripts/seed_db.py` inserts missing album rows first, then inserts missing song rows directly into `songs` with album linkage.
+
+## Schema notes
+- Songs now link directly to albums through `songs.album_id`.
+- `songs.track_number` preserves album ordering.
+- Migration `0002_remove_album_songs_table.py` removes the old `album_songs` join table and migrates existing relationship data onto `songs`.
+- With the current schema, a song belongs to at most one album record.
 
 ## Documentation
 - `docs/DATABASE.md`

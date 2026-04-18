@@ -21,5 +21,6 @@ The scaffold currently covers:
 - static song seed uniqueness and album track mapping checks
 - direct song-to-album seed coverage via per-album ordered track mappings
 - repeated-track edge case coverage (`Rift` includes `Lengthwise` twice)
+- migration-aware documentation of the direct `songs.album_id` + `songs.track_number` model
 
-Expand coverage as real business routes and database-backed seed tests are added.
+Expand coverage as real business routes, migration tests, and database-backed seed tests are added.
