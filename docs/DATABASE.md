@@ -59,4 +59,3 @@ Join table between chasing lists and songs.
 - The “max 5 songs” chasing list rule is enforced by the allowed positions `1..5` and should also be checked in application logic.
 - `location_geopoint` uses PostGIS geography `POINT` with SRID 4326.
 - The current seed path populates `albums`, `songs`, and `album_songs` from the studio discography data.
-- `Get More Down` remains in the album seed list but currently has no canonical track mapping in `scripts/songs_seed.py` because no trustworthy tracklist was available from phish.net at compile time.

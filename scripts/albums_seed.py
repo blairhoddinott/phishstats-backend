@@ -15,6 +15,5 @@ ALBUMS = [
     {"name": "Fuego", "year": 2014},
     {"name": "Big Boat", "year": 2016},
     {"name": "Sigma Oasis", "year": 2020},
-    {"name": "Get More Down", "year": 2024},
     {"name": "Evolve", "year": 2024},
 ]

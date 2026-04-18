@@ -11,9 +11,9 @@ def test_song_seed_has_unique_names() -> None:
     assert len(names) == len(set(names))
 
 
-def test_album_song_mapping_covers_seeded_albums_except_unmapped_placeholder() -> None:
+def test_album_song_mapping_covers_seeded_albums() -> None:
     seeded_album_names = {album["name"] for album in ALBUMS}
-    assert seeded_album_names - {"Get More Down"} == set(ALBUM_SONGS)
+    assert seeded_album_names == set(ALBUM_SONGS)
 
 
 def test_album_song_tracks_reference_seeded_song_names() -> None:

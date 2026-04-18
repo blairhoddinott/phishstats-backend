@@ -2,7 +2,7 @@ from scripts.albums_seed import ALBUMS
 
 
 def test_album_seed_count() -> None:
-    assert len(ALBUMS) == 16
+    assert len(ALBUMS) == 15
 
 
 def test_album_seed_contains_known_titles() -> None:
@@ -21,7 +21,6 @@ def test_album_seed_contains_known_titles() -> None:
         ("Fuego", 2014),
         ("Big Boat", 2016),
         ("Sigma Oasis", 2020),
-        ("Get More Down", 2024),
         ("Evolve", 2024),
     }
 
