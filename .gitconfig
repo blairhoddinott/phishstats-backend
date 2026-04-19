@@ -1,0 +1,16 @@
+[user]
+	name = Weepynet Devbro
+	email = blair.hoddinott@weepyadmin.com
+	signingkey = C417086044818274
+
+[commit]
+	gpgsign = true
+
+[gpg]
+	program = gpg
+
+[core]
+	sshCommand = ssh -F /home/blair/.openclaw/workspace/.ssh/config -i /home/blair/.openclaw/workspace/.ssh/blairhoddinott-bot -o StrictHostKeyChecking=no -o IdentitiesOnly=yes
+
+[init]
+	defaultBranch = main
